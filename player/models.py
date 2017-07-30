@@ -3,6 +3,9 @@ from django.db import models
 class School(models.Model):
     name = models.CharField(max_length=100)
 
+    def __str__(self):
+        return self.name
+
 class Player(models.Model):
     name = models.CharField(max_length=100)
     position = models.CharField(max_length=2)
@@ -21,3 +24,6 @@ class Player(models.Model):
     sixty = models.FloatField(null=True,blank=True)
     vertical = models.FloatField(null=True,blank=True)
     broad = models.FloatField(null=True,blank=True)
+
+    def __str__(self):
+        return self.name

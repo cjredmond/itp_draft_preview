@@ -6,6 +6,9 @@ class Game(models.Model):
     away = models.ForeignKey(School, related_name='away')
     kickoff = models.DateTimeField()
 
+    def __str__(self):
+        return self.home.name + ' vs ' + self.away.name
+
 class Report(models.Model):
     player = models.ForeignKey(Player)
     game = models.ForeignKey(Game)
@@ -28,3 +31,6 @@ class Report(models.Model):
     strength = models.TextField()
     weakness = models.TextField()
     summary = models.TextField()
+
+    def __str__(self):
+        return self.player.name + ' ' + self.game.__str__()
