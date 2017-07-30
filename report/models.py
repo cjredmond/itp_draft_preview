@@ -34,3 +34,10 @@ class Report(models.Model):
 
     def __str__(self):
         return self.player.name + ' ' + self.game.__str__()
+
+    @property
+    def trait_avg(self):
+        return (self.athletic_ability + self.football_intelligence + self.toughness + self.play_speed + self.football_intelligence ) / 5
+
+    def pos_avg(self):
+        return (self.pos_athletic_ability + self.pos_football_intelligence + self.pos_toughness + self.pos_play_speed + self.pos_football_intelligence ) / 5
