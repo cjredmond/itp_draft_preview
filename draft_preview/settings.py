@@ -110,3 +110,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_PATH = os.path.join(BASE_DIR, 'static')
+LOGIN_SUCCESS_URL = '/'
