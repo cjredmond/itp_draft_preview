@@ -28,7 +28,8 @@ INSTALLED_APPS = [
     'player',
     'report',
     'user_auth',
-    'article'
+    'article',
+    'scout'
 ]
 
 MIDDLEWARE = [
