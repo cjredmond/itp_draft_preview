@@ -27,7 +27,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'player',
     'report',
-    'user_auth'
+    'user_auth',
+    'article'
 ]
 
 MIDDLEWARE = [

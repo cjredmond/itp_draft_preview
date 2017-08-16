@@ -6,6 +6,9 @@ class School(models.Model):
     def __str__(self):
         return self.name
 
+class Team(models.Model):
+    name = models.CharField(max_length=100)
+
 class Player(models.Model):
     name = models.CharField(max_length=100)
     position = models.CharField(max_length=2)
