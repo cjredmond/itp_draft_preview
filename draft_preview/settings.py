@@ -29,8 +29,9 @@ INSTALLED_APPS = [
     'report',
     'user_auth',
     'article',
-    'scout'
+    'scout',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -62,6 +63,15 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'draft_preview.wsgi.application'
 
+# PAYMENTS_PLANS = {
+#     "monthly": {
+#         "stripe_plan_id": "pro_monthly",
+#         "name": "Membership",
+#         "description": "Monthly subscription to ITP",
+#         "price": 20,
+#         "interval": "month"
+#     }
+# }
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
@@ -70,7 +80,17 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+    },
+
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'NAME': 'itp',
+    #     'USER': 'itp',
+    #     'PASSWORD': 'Supervisor123!dragonRE',
+    #     # 'HOST': '10.40.2.201',
+    #     'HOST': '163.182.170.171',
+    #     'PORT': '5432'
+    # }
 }
 
 
@@ -107,9 +127,18 @@ USE_L10N = True
 USE_TZ = True
 
 
+STRIPE_PUBLIC_KEY = 'pk_test_hgRJMtynoIUxQNn1JPzpj6jT'
+STRIPE_SECRET_KEY = 'sk_test_i26a5CCLPSFVf4BkdmwEscEU'
+# PINAX_STRIPE_API_VERSION = '2015-10-16'
+# PINAX_STRIPE_INVOICE_FROM_EMAIL = 'billing@itp.com'
+# PINAX_STRIPE_DEFAULT_PLAN = None
+# PINAX_STRIPE_SEND_EMAIL_RECIEPTS = True
+# PINAX_STRIPE_SUBSCRIPTION_REQUIRED_EXCEPTION_URLS = []
+# PINAX_STRIPE_SUBSCRIPTION_REQUIRED_REDIRECT = None
+# PINAX_STRIPE_SUBSCRIPTION_TAX_PERCENT =
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
-
+SITE_ID = 1
 STATIC_URL = '/static/'
 STATIC_PATH = os.path.join(BASE_DIR, 'static')
 LOGIN_SUCCESS_URL = '/'
